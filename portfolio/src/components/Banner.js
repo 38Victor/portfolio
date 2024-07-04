@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/images/header-img.svg";
+import profilePicture from "../assets/images/profilePicture (1).jpg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
+  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const period = 2000;
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [text])
+  }, [text]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -45,39 +45,46 @@ export const Banner = () => {
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
-  }
+  };
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/VictorCamposresume.pdf'; 
+    link.download = 'VictorCamposresume.pdf';
+    console.log('Downloading resume from:', link.href);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Im a very ambitous front-end developer looking for a role in 
-                    an established IT or Software company, with the oppurtunity to work with the latest
-                    technologies on challeneing and diverse projects.</p>
-                    <p> 
-                    I'm very confident, naturally curious, and prepetually working on 
-                    imporving my chops one desgin problem at a time.     
-                </p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-              </div>}
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer", "Web Designer", "UI/UX Designer"]'><span className="wrap">{text}</span></span></h1>
+                  <p>I'm a very ambitious front-end developer looking for a role in an established IT or Software company, with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
+                  <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications.</p>
+                  <button onClick={downloadResume}>Download Resume <ArrowRightCircle size={25} /></button>
+                </div>
+              }
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
-                </div>}
+                  <img src={profilePicture} alt="Profile Picture" className="profile-image" />
+                </div>
+              }
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};

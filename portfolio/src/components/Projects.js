@@ -1,8 +1,8 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/images/project-img1.png";
-import projImg2 from "../assets/images/project-img2.png";
-import projImg3 from "../assets/images/project-img3.png";
+import Plutus from "../assets/images/Plutus.png";
+import DnDNearby from "../assets/images/DnDNearby.png"; 
+import RetailRenaissance from "../assets/images/RetailRenissance.png";
 import colorSharp2 from "../assets/images/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,20 +11,20 @@ export const Projects = () => {
   const projects = [
     {
       title: "Plutus",
-      description: "Named after the greek god of wealth, plutus was our take on gamified financial literacy app, as a part of the 2024 Calgary Hackathon ",
-      imgUrl: projImg1,
-      link: "https://github.com/yesiamdaniel/calgaryhacks_2024"
+      description: "Named after the greek god of wealth, Plutus was our take on gamified financial literacy app, as a part of the 2024 Calgary Hackathon",
+      imgUrl: Plutus,
+      link: "https://devpost.com/software/plutus-lmxpih"
     },
     {
       title: "DnD Nearby",
-      description: "A social media app, where a niche comunity can come to form groups and socialize with likeminded people ",
-      imgUrl: projImg2,
+      description: "A social media app, where a niche community can come to form groups and socialize with likeminded people",
+      imgUrl: DnDNearby, 
       link: "https://github.com/KarlWinkler/DnD_Nearby"
     },
     {
-      title: "Retail Renissance",
-      description: "A database mangement app, where hardware stores can easily track their shipements, orders, quanities, across multiple stores.",
-      imgUrl: projImg3,
+      title: "Retail Renaissance",
+      description: "A database management app, where hardware stores can easily track their shipments, orders, quantities, users and customers across multiple stores.",
+      imgUrl: RetailRenaissance,
       link: "https://github.com/desobob11/RetailRenaissance"
     },
   ];
@@ -38,19 +38,8 @@ export const Projects = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>Projects</h2>
-                  <p> Here, you will find a collection of my personal and academic projects. Each project reflects my journey in software development, demonstrating my skills in Python, JavaScript, and more. Browse through the categories to explore my work, ranging from web development to data analysis and beyond.</p>
+                  <p>Here, you will find a collection of my personal and academic projects. Each project reflects my journey in software development, demonstrating my skills in Python, JavaScript, SQL and more. My work, ranges from web development to data analysis and beyond. Stay tuned for more!</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                      <Nav.Item>
-                        <Nav.Link eventKey="first">All</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="second">Python</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="third">Java/JS</Nav.Link>
-                      </Nav.Item>
-                    </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                       <Tab.Pane eventKey="first">
                         <Row>
