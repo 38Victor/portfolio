@@ -302,15 +302,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 10px 0;  /* Reduce padding */
+  padding: 0 0 10px 0;  
   position: relative;
 }
 .skill-bx {
   background: #151515;
-  border-radius: 30px;  /* Adjust radius if needed */
+  border-radius: 30px;  
   text-align: center;
-  padding: 30px 30px;  /* Reduce padding */
-  margin-top: -30px;  /* Adjust margin to move section up */
+  padding: 30px 30px;  
+  margin-top: -30px; 
 }
 .skill h2 {
   font-size: 35px;  /* Reduce font size */
@@ -362,15 +362,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transform-style: preserve-3d;
   transform-origin: 50px 50px 0;  /* Adjust origin based on new size */
   margin-bottom: 10px; /* Add margin at the bottom to space out the text */
-  margin-right: 0; /* Remove margin-right */
+  margin-right: 0; 
   
   div {
     position: absolute;
-    width: 100px;  /* Adjust size */
-    height: 100px;  /* Adjust size */
+    width: 100px;  
+    height: 100px;  
     border: 1px solid #ccc;
     background: rgba(255, 255, 255, 0.4);
-    font-size: 40px;  /* Adjust font size */
+    font-size: 40px;  
     display: flex;
     justify-content: center;
     align-items: center;
