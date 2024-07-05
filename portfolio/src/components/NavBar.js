@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/images/logo.svg';
+import VCLogo from '../assets/images/VCLogo.png';
 import navIcon1 from '../assets/images/nav-icon1.svg';
 import github from '../assets/images/github.png';
 import { HashLink } from 'react-router-hash-link';
@@ -36,7 +36,7 @@ export const NavBar = () => {
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" />
+            <img src={VCLogo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>

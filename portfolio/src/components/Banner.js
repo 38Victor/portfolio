@@ -11,8 +11,8 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
-  const period = 2000;
+  const toRotate = ["Web Developer.", "Web Designer.", "UI/UX Designer."];
+  const period = 1000;
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -41,7 +41,7 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(200);
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
@@ -49,8 +49,8 @@ export const Banner = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/VictorCamposresume.pdf'; 
-    link.download = 'VictorCamposresume.pdf';
+    link.href = '/VictorCampos.Resume.pdf'; 
+    link.download = 'VictorCampos.Resume.pdf';
     console.log('Downloading resume from:', link.href);
     document.body.appendChild(link);
     link.click();
@@ -66,7 +66,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer", "Web Designer", "UI/UX Designer"]'><span className="wrap">{text}</span></span></h1>
+                  <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer.", "Web Designer.", "UI/UX Designer."]'><span className="wrap">{text}</span></span></h1>
                   <p>I'm a very ambitious front-end developer looking for a role in an established IT or Software company, with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
                   <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications.</p>
                   <button onClick={downloadResume}>Download Resume <ArrowRightCircle size={25} /></button>

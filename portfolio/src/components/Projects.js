@@ -6,6 +6,8 @@ import RetailRenaissance from "../assets/images/RetailRenissance.png";
 import colorSharp2 from "../assets/images/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { faHtml5, faCss3, faReact, faJsSquare,  } from '@fortawesome/free-brands-svg-icons';
+
 
 export const Projects = () => {
   const projects = [
@@ -13,19 +15,28 @@ export const Projects = () => {
       title: "Plutus",
       description: "Named after the greek god of wealth, Plutus was our take on gamified financial literacy app, as a part of the 2024 Calgary Hackathon",
       imgUrl: Plutus,
-      link: "https://devpost.com/software/plutus-lmxpih"
+      link: "https://devpost.com/software/plutus-lmxpih",
+      languages: [faHtml5, faCss3, faJsSquare, faReact]
     },
     {
       title: "DnD Nearby",
       description: "A social media app, where a niche community can come to form groups and socialize with likeminded people",
       imgUrl: DnDNearby, 
-      link: "https://github.com/KarlWinkler/DnD_Nearby"
+      link: "https://github.com/KarlWinkler/DnD_Nearby",
+      languages: [faHtml5, faCss3, faJsSquare, faReact]
     },
     {
       title: "Retail Renaissance",
       description: "A database management app, where hardware stores can easily track their shipments, orders, quantities, users and customers across multiple stores.",
       imgUrl: RetailRenaissance,
-      link: "https://github.com/desobob11/RetailRenaissance"
+      link: "https://github.com/desobob11/RetailRenaissance",
+      languages: [faHtml5, faCss3, faJsSquare, faReact]
+    },
+    {
+      title: "Coming Soon!",
+      description: "A Database Management System, where hospitals con track paitents, doctors, nurses.. etc",
+      imgUrl: colorSharp2,
+      link: ""
     },
   ];
 
@@ -52,12 +63,6 @@ export const Projects = () => {
                             )
                           })}
                         </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <p>Projects related to Python.</p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>Projects related to Java and JavaScript.</p>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
