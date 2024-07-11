@@ -418,6 +418,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+.background-image-right {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+  right: -2;  /* Ensure it moves to the right */
+}
+
 /* Cube CSS */
 
 .cube-container {
