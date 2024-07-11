@@ -1,12 +1,13 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import Plutus from "../assets/images/Plutus.png";
-import DnDNearby from "../assets/images/DnDNearby.png"; 
+import DnDNearby from "../assets/images/DnDNearby.png";
 import RetailRenaissance from "../assets/images/RetailRenissance.png";
 import colorSharp2 from "../assets/images/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { faHtml5, faCss3, faReact, faJsSquare,  } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3, faReact, faJsSquare, faPython, } from '@fortawesome/free-brands-svg-icons';
+import SQLIcon from "../assets/images/SQLIcon.png";
 
 
 export const Projects = () => {
@@ -16,27 +17,48 @@ export const Projects = () => {
       description: "Named after the greek god of wealth, Plutus was our take on gamified financial literacy app, as a part of the 2024 Calgary Hackathon",
       imgUrl: Plutus,
       link: "https://devpost.com/software/plutus-lmxpih",
-      languages: [faHtml5, faCss3, faJsSquare, faReact]
+      languages: [
+        { type: 'icon', icon: faHtml5, color: '#F06529' },
+        { type: 'icon', icon: faCss3, color: '#28a4d9' },
+        { type: 'icon', icon: faReact, color: '#5ED4FD' },
+        { type: 'icon', icon: faJsSquare, color: '#EFD81D' }
+      ]
     },
     {
       title: "DnD Nearby",
       description: "A social media app, where a niche community can come to form groups and socialize with likeminded people",
-      imgUrl: DnDNearby, 
+      imgUrl: DnDNearby,
       link: "https://github.com/KarlWinkler/DnD_Nearby",
-      languages: [faHtml5, faCss3, faJsSquare, faReact]
+      languages: [
+        { type: 'icon', icon: faHtml5, color: '#F06529' },
+        { type: 'icon', icon: faCss3, color: '#28a4d9' },
+        { type: 'icon', icon: faReact, color: '#5ED4FD' },
+        { type: 'icon', icon: faJsSquare, color: '#EFD81D' }
+      ]
     },
     {
       title: "Retail Renaissance",
       description: "A database management app, where hardware stores can easily track their shipments, orders, quantities, users and customers across multiple stores.",
       imgUrl: RetailRenaissance,
       link: "https://github.com/desobob11/RetailRenaissance",
-      languages: [faHtml5, faCss3, faJsSquare, faReact]
+      languages: [
+        { type: 'icon', icon: faHtml5, color: '#F06529' },
+        { type: 'icon', icon: faCss3, color: '#28a4d9' },
+        { type: 'icon', icon: faJsSquare, color: '#EFD81D' },
+        { type: 'icon', icon: faReact, color: '#5ED4FD' },
+        { type: 'icon', icon: faPython, color: '#c2c330' },
+        { type: 'image', src: SQLIcon, name: 'SQL' }
+      ]
     },
     {
       title: "Coming Soon!",
-      description: "A Database Management System, where hospitals con track paitents, doctors, nurses.. etc",
+      description: "A Database Management System, where hospitals can track patients, doctors, nurses.. etc",
       imgUrl: colorSharp2,
-      link: ""
+      link: "",
+      languages: [
+        { type: 'icon', icon: faPython, color: '#c2c330' },
+        { type: 'image', src: SQLIcon, name: 'SQL' }
+      ]
     },
   ];
 
