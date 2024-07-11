@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/images/color-sharp.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFigma, faHtml5, faCss3, faReact, faJsSquare, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import SQLIcon from '../assets/images/SQLIcon.png';
+import AnimatedLetters from './AnimatedLetters'; 
 
 export const Skills = () => {
+  const [letterClass, setLetterClass] = useState('text-animate');
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -36,21 +39,37 @@ export const Skills = () => {
     { type: 'image', src: SQLIcon, name: 'SQL', className: "SQLIcon" },
   ];
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 4000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const headingArray = ['S', 'k', 'i', 'l', 'l', 's'];
+
   return (
     <section className="skill" id="skills">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="skill-bx wow zoomIn">
-              <h2>Skills</h2>
-              <p>Over the years, I have honed my skills in various web development technologies, making me proficient in building dynamic and responsive web applications.  
-                 Here are some of the key technologies and tools I specialize in.</p>
-                 <Carousel
+              <h2>
+                <AnimatedLetters
+                  letterClass={letterClass}
+                  strArray={headingArray}
+                  idx={15}
+                />
+              </h2>
+              <p>Over the years, I have honed my skills in various web development technologies, making me proficient in building dynamic and responsive web applications.
+                Here are some of the key technologies and tools I specialize in.</p>
+              <Carousel
                 responsive={responsive}
                 infinite={true}
                 className="skill-slider"
                 customLeftArrow={<div></div>}
-                customRightArrow={<div></div>}>
+                customRightArrow={<div></div>}
+              >
                 {skills.map((skill, index) => (
                   <div className="skill-item" key={index}>
                     <div className="cube-container">
@@ -79,22 +98,22 @@ export const Skills = () => {
                         ) : (
                           <>
                             <div className='face1'>
-                              <img src={skill.src} alt={skill.name} className="skill-image"/>
+                              <img src={skill.src} alt={skill.name} className="skill-image" />
                             </div>
                             <div className='face2'>
-                              <img src={skill.src} alt={skill.name} className="skill-image"/>
+                              <img src={skill.src} alt={skill.name} className="skill-image" />
                             </div>
                             <div className='face3'>
-                              <img src={skill.src} alt={skill.name} className="skill-image"/>
+                              <img src={skill.src} alt={skill.name} className="skill-image" />
                             </div>
                             <div className='face4'>
-                              <img src={skill.src} alt={skill.name} className="skill-image"/>
+                              <img src={skill.src} alt={skill.name} className="skill-image" />
                             </div>
                             <div className='face5'>
-                              <img src={skill.src} alt={skill.name} className="skill-image"/>
+                              <img src={skill.src} alt={skill.name} className="skill-image" />
                             </div>
                             <div className='face6'>
-                              <img src={skill.src} alt={skill.name} className="skill-image"/>
+                              <img src={skill.src} alt={skill.name} className="skill-image" />
                             </div>
                           </>
                         )}
@@ -110,5 +129,5 @@ export const Skills = () => {
       </div>
       <img className="background-image-left" src={colorSharp} alt="Image" />
     </section>
-  )
-}
+  );
+};

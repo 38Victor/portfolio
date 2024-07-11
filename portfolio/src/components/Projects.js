@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import Plutus from "../assets/images/Plutus.png";
@@ -6,11 +7,21 @@ import RetailRenaissance from "../assets/images/RetailRenissance.png";
 import colorSharp2 from "../assets/images/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { faHtml5, faCss3, faReact, faJsSquare, faPython, } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3, faReact, faJsSquare, faPython } from '@fortawesome/free-brands-svg-icons';
 import SQLIcon from "../assets/images/SQLIcon.png";
-
+import AnimatedLetters from './AnimatedLetters'; 
+import './index.scss'; // Ensure this is correctly imported
 
 export const Projects = () => {
+  const [letterClass, setLetterClass] = useState('text-animate');
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 4000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   const projects = [
     {
       title: "Plutus",
@@ -62,6 +73,8 @@ export const Projects = () => {
     },
   ];
 
+  const headingArray = ['P', 'r', 'o', 'j', 'e', 'c', 't', 's'];
+
   return (
     <section className="project" id="projects">
       <Container>
@@ -70,7 +83,14 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Projects</h2>
+                  <h2>
+                    <AnimatedLetters
+                      letterClass={letterClass}
+                      strArray={headingArray}
+                      idx={15}
+                      elementType="h2"
+                    />
+                  </h2>
                   <p>Here, you will find a collection of my personal and academic projects. Each project reflects my journey in software development, demonstrating my skills in Python, JavaScript, SQL and more. My work, ranges from web development to data analysis and beyond. Stay tuned for more!</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -93,7 +113,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="background"></img>
     </section>
   );
 }
