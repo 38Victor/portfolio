@@ -65,7 +65,6 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer.", "Web Designer.", "UI/UX Designer."]'><span className="wrap">{text}</span></span></h1>
                   <p>I'm a very ambitious front-end developer looking for a role in an established IT or Software company, with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
                   <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications.</p>

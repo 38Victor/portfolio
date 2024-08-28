@@ -16,6 +16,24 @@
 	src: url('./assets/fonts/helvetica-neu.ttf');
 }
 
+
+@font-face {
+	font-family: 'Almarai Bold';
+	src: url('./assets/fonts/Almarai-Bold.ttf');
+}
+
+
+@font-face {
+	font-family: 'Almarai Reg';
+	src: url('./assets/fonts/Almarai-Regular.ttf');
+}
+
+
+@font-face {
+	font-family: 'Kanit-ExtraLight';
+	src: url('./assets/fonts/Kanit-ExtraLight.ttf');
+}
+
 /************ Default Css ************/
 * {
   margin: 0;
@@ -34,7 +52,7 @@ body {
   position: relative;
   background-color: #121212 !important;
   color: #fff !important;
-  font-family: 'Helvetica Neue' !important;
+  font-family: 'Almarai Reg' !important;
   font-weight: 800;
 }
 
@@ -43,8 +61,8 @@ h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 100;
+  font-family: 'Kanit-ExtraLight';
+  font-weight: 300;
   letter-spacing: 2.5px;
 }
 
@@ -54,8 +72,8 @@ h1 {
   padding: 0;
   line-height: normal;
   height: 130px;
-  font-family: 'Sans Serif';
-  font-weight: 300;
+  font-family: 'Kanit-ExtraLight';
+  font-weight: 50;
 
 }
 
@@ -65,10 +83,13 @@ p, a, li, button, ul {
   line-height: normal;
   text-decoration: none;
   animation: pulse 1s forwards;
-  font-family: 'sans-serif', ;
+  font-family: 'Helvetica' ;
   font-size: large;
+  color: #ffffff;
 
 }
+
+
 
 a:hover {
   text-decoration: none;
@@ -130,7 +151,7 @@ nav.navbar.scrolled {
 
 
 nav.navbar a.navbar-brand {
-    width: 9%;
+    width: 7%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -293,8 +314,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
@@ -363,7 +382,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: -30px; 
 }
 .skill h2 {
-  font-size: 35px;  /* Reduce font size */
+  font-size: 35px;  
   font-weight: 700;
 }
 .skill p {
@@ -375,6 +394,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   width: 90%;
 }
+
 .skill-slider {
   overflow: hidden;
   position: absolute;
@@ -408,6 +428,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 16px;
   color: white;
   text-align: center;
+  font-weight: bold;
 }
 
 .background-image-left {
@@ -537,12 +558,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .project p {
   color: #B8B8B8;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  margin: 14px auto 30px auto;
+  margin: 24px auto 30px auto;
   text-align: center;
-  width: 56%;
+  width: 90%;
 }
 .project .nav.nav-pills {
   width: 72%;
