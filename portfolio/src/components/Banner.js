@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import profilePicture from "../assets/images/profilePicture (1).jpg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
-import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
@@ -11,7 +10,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer.", "Web Designer.", "UI/UX Designer."];
+  const toRotate = ["Web Developer.", "UI/UX Designer.", "Future NetEng.", "Future SecEng."];
   const period = 1000;
 
   useEffect(() => {
@@ -49,8 +48,8 @@ export const Banner = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/VictorCampos.Resume.pdf'; 
-    link.download = 'VictorCampos.Resume.pdf';
+    link.href = '/Victor Campos Resume.pdf'; 
+    link.download = 'Victor Campos Resume.pdf';
     console.log('Downloading resume from:', link.href);
     document.body.appendChild(link);
     link.click();
@@ -64,10 +63,10 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer.", "Web Designer.", "UI/UX Designer."]'><span className="wrap">{text}</span></span></h1>
-                  <p>I'm a very ambitious front-end developer looking for a role in an established IT or Software company, with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
-                  <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications.</p>
+                <div>
+                  <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer.", "UI/UX Designer.", "Future NetEng.", Future SecEng."]'><span className="wrap">{text}</span></span></h1>
+                  <p>I'm a very ambitious developer looking for a role in an established IT or Software company, with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
+                  <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications. I do this in order to work towards my goal as an aspiring Network and Security Engineer.</p>
                   <button onClick={downloadResume}>Download Resume <ArrowRightCircle size={25} /></button>
                 </div>
               }
@@ -76,7 +75,7 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                <div>
                   <img src={profilePicture} alt="Profile Picture" className="profile-image" />
                 </div>
               }

@@ -2,13 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/images/color-sharp.png";
+import colorSharp2 from "../assets/images/color-sharp2.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFigma, faHtml5, faCss3, faReact, faJsSquare, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import SQLIcon from '../assets/images/SQLIcon.png';
 import AnimatedLetters from './AnimatedLetters'; 
 
+
 export const Skills = () => {
+
   const [letterClass, setLetterClass] = useState('text-animate');
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 4000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const responsive = {
     superLargeDesktop: {
@@ -128,7 +138,7 @@ export const Skills = () => {
         </div>
       </div>
       <img className="background-image-left" src={colorSharp} alt="Image" />
-      <img className="background-image-right" src={colorSharp} alt="Image" />
+      <img className="background-image-right" src={colorSharp2} alt="Image" />
 
     </section>
   );

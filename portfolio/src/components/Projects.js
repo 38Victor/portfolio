@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import Plutus from "../assets/images/Plutus.png";
-import DnDNearby from "../assets/images/DnDNearby.png";
-import RetailRenaissance from "../assets/images/RetailRenissance.png";
+import DnDNearby from "../assets/images/DnDNearby.jpeg";
+import RetailRenaissance from "../assets/images/RetailRenissance.jpeg";
+import Healthcare from "../assets/images/Healthcare.png";
 import colorSharp2 from "../assets/images/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -22,6 +23,15 @@ export const Projects = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  const [animateOnce, setAnimateOnce] = useState(false);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem('projectsAnimated')) {
+      setAnimateOnce(true);
+      sessionStorage.setItem('projectsAnimated', 'true');
+    }
+  }, []);
+  
   const projects = [
     {
       title: "Plutus",
@@ -64,7 +74,7 @@ export const Projects = () => {
     {
       title: "Coming Soon!",
       description: "A Database Management System, where hospitals can track patients, doctors, nurses.. etc",
-      imgUrl: colorSharp2,
+      imgUrl: Healthcare,
       link: "",
       languages: [
         { type: 'icon', icon: faPython, color: '#c2c330' },
@@ -82,7 +92,7 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                 <div className={isVisible && animateOnce ? "animate__animated animate__fadeIn" : ""}>
                   <h2>
                     <AnimatedLetters
                       letterClass={letterClass}
@@ -93,8 +103,8 @@ export const Projects = () => {
                   </h2>
                   <p>Here, you will find a collection of my personal and academic projects. Each project reflects my journey in software development, demonstrating my skills in Python, JavaScript, SQL and more. My work, ranges from web development to data analysis and beyond. Stay tuned for more!</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                      <Tab.Pane eventKey="first">
+                   <Tab.Content className={isVisible && animateOnce ? "animate__animated animate__slideInUp" : ""}>
+                    <Tab.Pane eventKey="first">
                         <Row>
                           {projects.map((project, index) => {
                             return (
