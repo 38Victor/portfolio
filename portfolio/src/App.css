@@ -677,6 +677,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 10px;
+  background-color: #121212; 
+
 }
 
 .footer .social-icon {
@@ -689,7 +691,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .footer .email {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 10px;
   text-align: right;
   background: linear-gradient(90.21deg, #AA367C -5.91%, #735fc8 111.58%);
@@ -717,6 +719,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1;
   display: block;
   margin-top: 50px;
+}
+
+.custom-footer-container {
+  background-color: #151515; 
+  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 

@@ -9,7 +9,7 @@ export const Footer = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [delta, setDelta] = useState(100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Thank You For Visiting !", "Let's Start a Conversation."];
+  const toRotate = ["Thank You for Visiting!", "Let's Start a Conversation."];
   const period = 2000; 
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export const Footer = () => {
 
   return (
     <footer className="footer">
-      <Container>
+      <Container className="custom-footer-container"> 
         <Row className="justify-content-end">
           <Col size={12} sm={6} className="d-flex justify-content-center">
             <h1 className="footer-message">{text}</h1>
@@ -59,9 +59,8 @@ export const Footer = () => {
                 <img src={github} alt="GitHub" />
               </a>
             </div>
-
-            <p className="copyright">© Copyright 2024. Victor Campos All Rights Reserved</p>
             <p className="email">victor.goitia.campos@gmail.com</p>
+            <p className="copyright">© Copyright 2024. Victor Campos All Rights Reserved</p>
           </Col>
         </Row>
       </Container>
