@@ -92,7 +92,7 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-                 <div className={isVisible && animateOnce ? "animate__animated animate__fadeIn" : ""}>
+                 <div className={isVisible && animateOnce}>
                   <h2>
                     <AnimatedLetters
                       letterClass={letterClass}
@@ -103,7 +103,7 @@ export const Projects = () => {
                   </h2>
                   <p>Here, you will find a collection of my personal and academic projects. Each project reflects my journey in software development, demonstrating my skills in Python, JavaScript, SQL and more. My work, ranges from web development to data analysis and beyond. Stay tuned for more!</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                   <Tab.Content className={isVisible && animateOnce ? "animate__animated animate__slideInUp" : ""}>
+                   <Tab.Content className={isVisible && animateOnce }>
                     <Tab.Pane eventKey="first">
                         <Row>
                           {projects.map((project, index) => {
