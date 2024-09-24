@@ -10,7 +10,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer.", "UI/UX Designer.", "Future NetEng.", "Future SecEng."];
+  const toRotate = ["Web Developer.", "UI/UX Designer.", "Future Data Sci.", "Future NetEng."];
   const period = 1000;
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export const Banner = () => {
                 <div>
                   <h1>{`Hi! I'm Victor, A`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Web Developer.", "UI/UX Designer.", "Future NetEng.", Future SecEng."]'><span className="wrap">{text}</span></span></h1>
                   <p>I'm a very ambitious developer looking for a role in an established IT or Software company, with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
-                  <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications. I do this in order to work towards my goal as an aspiring Network and Security Engineer.</p>
+                  <p>I'm very confident, naturally curious, and perpetually learning as I'm currently working on my Azure Fundamentals and COMPTIA Secuirty+ Certifications. I do this in order to work towards my goal as an aspiring Big Data Analyst and Network Engineer.</p>
                   <button onClick={downloadResume}>Download Resume <ArrowRightCircle size={25} /></button>
                 </div>
               }
